@@ -8,24 +8,25 @@ _start:
 mov r1, $0
 movt r1, $0x1002	//Primecell pl111 clcd is mapped to 0x10020000
 
+//setup primecell registers
 movw r3, $0x3F9C
 movt r3, $0x3F1F	//0x3F1F3F9C 
-str r3, [r1, $0x0]
+str r3, [r1, $0x0]	//CLCD_TIM0
 
 movw r3, $0x61DF
 movt r3, $0x090B	//0x090B61DF
-str r3, [r1, $0x4]
+str r3, [r1, $0x4]	//CLCD_TIM1
 
 mov r3, $0x1800
 movt r3, $0x067F	//0x067F1800
-str r3, [r1, $0x8]
+str r3, [r1, $0x8]	//CLCD_TIM2
 
 mov r2, $0
 movt r2, $0x6002 	//0x60020000
-str r2, [r1, $0x10]
+str r2, [r1, $0x10]	//CLCD_UBAS
 
 movw r3, $0x082B	//CNTL_LCDEN | CNTL_LCDBPP24 | CNTL_LCDTFT | CNTL_LCDPWR
-str r3, [r1, $0x18]
+str r3, [r1, $0x18]	//CLCD_PL111_CNTL
 
 
 //testcode
