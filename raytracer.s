@@ -31,14 +31,14 @@ str r3, [r1, $0x18]	//CLCD_PL111_CNTL
 
 //testcode
 mov r0, $0
-mov r3, $0x12c000
+mov r3, $0x12c000	//vert lines
 
 .redbars:
 mov r1, r0
 and r1, r1, $0xFF
 str r1, [r2, r0]
 add r0, r0, $4
-cmp r0, r3
+cmp r0, r3		//we have reached 0x12c lines
 bne .redbars
 
 hcf: B hcf	//loop
