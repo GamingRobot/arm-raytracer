@@ -1,4 +1,4 @@
-NAME=raytracer
+NAME=color
 
 TOOLPREFIX=arm-none-eabi
 all: ${NAME}.bin
